@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empréstimos - Biblioteca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Biblioteca</h2>
+    <ul>
+      <li><a href="home.html"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19V8.5l8-5 8 5V19a2 2 0 0 1-2 2h-4v-6H10v6H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.6"/></svg>Catálogo</a></li>
+      <li><a href="cadastro.html"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Cadastro de Livros</a></li>
+      <li><a href="emprestimos.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5h9a5 5 0 1 1 0 10H5V5Zm0 10h11a3 3 0 1 1 0 6H5v-6Z" stroke="currentColor" stroke-width="1.6"/></svg>Empréstimos</a></li>
+      <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 17l-5-5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Sair</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="emprestimos-header">
+      <h1>Meus Empréstimos</h1>
+      <p class="emprestimos-subtitle">Acompanhe seus livros emprestados e prazos de devolução</p>
+    </div>
+
+    <!-- Resumo de Estatísticas -->
+    <div class="estatisticas-grid">
+      <div class="estatistica-card card-ativos">
+        <div class="estatistica-icone">📚</div>
+        <div class="estatistica-conteudo">
+          <span class="estatistica-numero">4</span>
+          <span class="estatistica-label">Empréstimos Ativos</span>
+        </div>
+      </div>
+      
+      <div class="estatistica-card card-atrasados">
+        <div class="estatistica-icone">⚠️</div>
+        <div class="estatistica-conteudo">
+          <span class="estatistica-numero">2</span>
+          <span class="estatistica-label">Livros Atrasados</span>
+        </div>
+      </div>
+      
+      <div class="estatistica-card card-devolvidos">
+        <div class="estatistica-icone">✓</div>
+        <div class="estatistica-conteudo">
+          <span class="estatistica-numero">1</span>
+          <span class="estatistica-label">Devolvidos</span>
+        </div>
+      </div>
+      
+      <div class="estatistica-card card-prazo">
+        <div class="estatistica-icone">⏱️</div>
+        <div class="estatistica-conteudo">
+          <span class="estatistica-numero">10</span>
+          <span class="estatistica-label">Dias até Próximo Vencimento</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de Empréstimos em Cards -->
+    <div class="emprestimos-secao">
+      <h2 class="secao-titulo">Empréstimos Ativos</h2>
+      
+      <div class="emprestimos-lista">
+        <!-- Card 1 - Pendente -->
+        <article class="emprestimo-card status-pendente-card">
+          <div class="emprestimo-card-header">
+            <h3 class="livro-titulo">Dom Casmurro</h3>
+            <span class="badge badge-pendente">Em andamento</span>
+          </div>
+          
+          <div class="emprestimo-card-body">
+            <div class="info-linha">
+              <span class="info-label">📅 Data de Empréstimo:</span>
+              <span class="info-valor">01/10/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">📆 Devolução Prevista:</span>
+              <span class="info-valor destaque-data">15/10/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">⏳ Dias Restantes:</span>
+              <span class="info-valor destaque-dias">13 dias</span>
+            </div>
+          </div>
+          
+          <div class="emprestimo-card-footer">
+            <a href="#" class="btn-card btn-devolver">Devolver Livro</a>
+            <a href="#" class="btn-card btn-renovar">Renovar Prazo</a>
+          </div>
+        </article>
+
+        <!-- Card 2 - Atrasado -->
+        <article class="emprestimo-card status-atrasado-card">
+          <div class="emprestimo-card-header">
+            <h3 class="livro-titulo">Harry Potter e a Pedra Filosofal</h3>
+            <span class="badge badge-atrasado">Atrasado</span>
+          </div>
+          
+          <div class="emprestimo-card-body">
+            <div class="info-linha">
+              <span class="info-label">📅 Data de Empréstimo:</span>
+              <span class="info-valor">02/10/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">📆 Devolução Prevista:</span>
+              <span class="info-valor destaque-data-atrasada">16/10/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">⚠️ Atraso:</span>
+              <span class="info-valor destaque-atraso">14 dias</span>
+            </div>
+          </div>
+          
+          <div class="emprestimo-card-footer">
+            <a href="#" class="btn-card btn-devolver-urgente">Devolver Urgente</a>
+            <a href="#" class="btn-card btn-contato">Contatar Biblioteca</a>
+          </div>
+        </article>
+
+        <!-- Card 3 - Pendente -->
+        <article class="emprestimo-card status-pendente-card">
+          <div class="emprestimo-card-header">
+            <h3 class="livro-titulo">1984</h3>
+            <span class="badge badge-pendente">Em andamento</span>
+          </div>
+          
+          <div class="emprestimo-card-body">
+            <div class="info-linha">
+              <span class="info-label">📅 Data de Empréstimo:</span>
+              <span class="info-valor">28/09/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">📆 Devolução Prevista:</span>
+              <span class="info-valor destaque-data">12/10/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">⏳ Dias Restantes:</span>
+              <span class="info-valor destaque-dias">10 dias</span>
+            </div>
+          </div>
+          
+          <div class="emprestimo-card-footer">
+            <a href="#" class="btn-card btn-devolver">Devolver Livro</a>
+            <a href="#" class="btn-card btn-renovar">Renovar Prazo</a>
+          </div>
+        </article>
+
+        <!-- Card 4 - Atrasado -->
+        <article class="emprestimo-card status-atrasado-card">
+          <div class="emprestimo-card-header">
+            <h3 class="livro-titulo">O Senhor dos Anéis</h3>
+            <span class="badge badge-atrasado">Atrasado</span>
+          </div>
+          
+          <div class="emprestimo-card-body">
+            <div class="info-linha">
+              <span class="info-label">📅 Data de Empréstimo:</span>
+              <span class="info-valor">25/09/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">📆 Devolução Prevista:</span>
+              <span class="info-valor destaque-data-atrasada">09/10/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">⚠️ Atraso:</span>
+              <span class="info-valor destaque-atraso">7 dias</span>
+            </div>
+          </div>
+          
+          <div class="emprestimo-card-footer">
+            <a href="#" class="btn-card btn-devolver-urgente">Devolver Urgente</a>
+            <a href="#" class="btn-card btn-contato">Contatar Biblioteca</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Histórico de Empréstimos -->
+    <div class="emprestimos-secao">
+      <h2 class="secao-titulo">Histórico Recente</h2>
+      
+      <div class="emprestimos-lista">
+        <!-- Card 5 - Devolvido -->
+        <article class="emprestimo-card status-devolvido-card">
+          <div class="emprestimo-card-header">
+            <h3 class="livro-titulo">Orgulho e Preconceito</h3>
+            <span class="badge badge-devolvido">✓ Devolvido</span>
+          </div>
+          
+          <div class="emprestimo-card-body">
+            <div class="info-linha">
+              <span class="info-label">📅 Data de Empréstimo:</span>
+              <span class="info-valor">15/09/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">📆 Data de Devolução:</span>
+              <span class="info-valor">29/09/2025</span>
+            </div>
+            
+            <div class="info-linha">
+              <span class="info-label">✓ Status:</span>
+              <span class="info-valor destaque-devolvido">Devolvido no prazo</span>
+            </div>
+          </div>
+          
+          <div class="emprestimo-card-footer">
+            <a href="#" class="btn-card btn-emprestar-novamente">Emprestar Novamente</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
